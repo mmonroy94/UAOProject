@@ -1,0 +1,13 @@
+html,body {
+    height: 100vh;
+}
+
+.navbar-brand img{
+    border-radius: 70%;
+    margin: 0;
+}
+
+.logupTitle{
+    text-align: center;
+    margin: 1%;
+}
