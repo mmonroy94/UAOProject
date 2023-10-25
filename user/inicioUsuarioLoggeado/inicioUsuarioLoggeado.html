@@ -15,6 +15,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../shoppingCart.js" defer></script>
+    <script src="../../lista.js" defer></script>
   </head>
 
   <body>
@@ -66,9 +69,10 @@
             </button>
           </form>
 
-          <button class="px-3 py-2 mx-2 btn btn-outline-primary">
+          <button class="px-3 py-2 mx-2 btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <i class="bi bi-cart4"></i>
           </button>
+
 
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -84,6 +88,7 @@
       </div>
     </nav>
 
+    <!-- BANNER -->
     <header class="header pt-7">
       <div class="container-xl">
         <div class="row">
@@ -115,6 +120,7 @@
       </div>
     </header>
 
+    <!-- PRODUCTS -->
     <div class="container">
       <div class="row">
         <div class="col text-center">
@@ -123,78 +129,30 @@
       </div>
     </div>
 
-    <div class="container p-3">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="card h-100" style="width: 18rem">
-            <img
-              src="../images/132470420.jpeg"
-              class="card-img-top custom-img"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Sniks 1</h5>
-              <p class="card-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
+    <div class="container p-3" >
+      <div class="row" id="storeProducts">
 
-        <div class="col-md-3">
-          <div class="card h-100" style="width: 18rem">
-            <img
-              src="../images/1e8cbba9-2928-42d0-bced-cb9f261e6aef.jpg"
-              class="card-img-top custom-img"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Sniks 2</h5>
-              <p class="card-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
 
-        <div class="col-md-3">
-          <div class="card h-100" style="width: 18rem">
-            <img
-              src="../images/nike-photo-backgrounds-wallpaper-preview.jpg"
-              class="card-img-top custom-img"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Sniks 3</h5>
-              <p class="card-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
+    <!-- SHOPPING CART -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="carrito-compras-items">
+          <ul class="list-group list-group-flush" id="shoppingCartList">
+          </ul>
         </div>
-
-        <div class="col-md-3">
-          <div class="card h-60" style="width: 18rem">
-            <img
-              src="../images/nikeinvincible3-2023.jpg"
-              class="card-img-top custom-img"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Sniks 4</h5>
-              <p class="card-text">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-              <a href="#" class="btn btn-primary">Comprar</a>
-            </div>
-          </div>
+        <div >
+          <p id="shoppingCartTotal"></p>
         </div>
       </div>
     </div>
 
+    <!-- FOOTER -->
     <div class="container">
       <footer class="py-2 m-0 bg-body-tertiary">
         <p class="text-center small text-muted">Copyright &copy; Sniks 2023</p>
